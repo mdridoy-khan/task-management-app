@@ -1,5 +1,5 @@
 export const tasks = [
-  // Backlog: 3 tasks
+  // Backlog
   {
     id: 1,
     title: "Design new logo",
@@ -31,7 +31,7 @@ export const tasks = [
     attachments: 1,
   },
 
-  // review: 2 tasks
+  // review
   {
     id: 4,
     title: "Implement authentication",
@@ -53,7 +53,7 @@ export const tasks = [
     attachments: 0,
   },
 
-  // In Progress: 3 tasks
+  // In Progress
   {
     id: 6,
     title: "Develop frontend UI",
@@ -85,7 +85,7 @@ export const tasks = [
     attachments: 0,
   },
 
-  // Done: 2 tasks
+  // Done
   {
     id: 9,
     title: "Fix bug in dashboard",
