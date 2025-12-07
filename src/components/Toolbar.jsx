@@ -4,7 +4,7 @@ function Toolbar() {
   return (
     <div className="bg-white p-4 shadow-md flex flex-wrap items-center justify-between gap-4">
       <h1 className="text-xl font-bold">Task Board</h1>
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-4">
         <select className="border rounded px-2 py-1 text-sm">
           {projects.map((proj) => (
             <option key={proj} value={proj}>
