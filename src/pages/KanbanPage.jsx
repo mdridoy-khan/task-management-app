@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import KanbanColumn from "../components/KanbanColumn";
 import TaskDrawer from "../components/TaskDrawer";
 import Toolbar from "../components/Toolbar";
@@ -18,10 +19,18 @@ function KanbanPage() {
     <div className="container mx-auto p-4 relative">
       <Toolbar />
       {/* Drawer open button */}
-      <div className="flex justify-end">
+      <div className="flex justify-end items-center mt-2 xl:mt-4 gap-3">
+        <div>
+          <Link
+            to="/list"
+            className="px-4 py-1.5 text-sm bg-blue-600 text-white rounded shadow"
+          >
+            List View
+          </Link>
+        </div>
         <button
           onClick={() => setIsDrawerOpen(true)}
-          className="px-4 py-2 bg-blue-600 text-white rounded shadow mt-2 xl:mt-4"
+          className="px-4 py-1.5 text-sm bg-blue-600 text-white rounded shadow"
         >
           Open Drawer
         </button>
