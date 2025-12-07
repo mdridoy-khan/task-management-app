@@ -31,11 +31,11 @@ export const tasks = [
     attachments: 1,
   },
 
-  // To Do: 2 tasks
+  // review: 2 tasks
   {
     id: 4,
     title: "Implement authentication",
-    status: "todo",
+    status: "review",
     priority: "high",
     dueDate: "2025-12-15",
     assignee: "Jane Smith",
@@ -45,7 +45,7 @@ export const tasks = [
   {
     id: 5,
     title: "Update API endpoints",
-    status: "todo",
+    status: "review",
     priority: "medium",
     dueDate: "2025-12-25",
     assignee: "John Doe",
@@ -112,7 +112,7 @@ export const projects = ["Project A", "Project B", "Project C"];
 
 export const priorities = ["low", "medium", "high"];
 
-export const statuses = ["backlog", "todo", "inprogress", "done"];
+export const statuses = ["backlog", "review", "inprogress", "done"];
 
 export const assignees = [
   "John Doe",

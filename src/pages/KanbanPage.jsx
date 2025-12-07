@@ -1,12 +1,15 @@
+import { useState } from "react";
 import KanbanColumn from "../components/KanbanColumn";
 import TaskDrawer from "../components/TaskDrawer";
 import Toolbar from "../components/Toolbar";
 import { tasks } from "../data/mockData";
 
 function KanbanPage() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
   const groupedTasks = {
     backlog: tasks.filter((t) => t.status === "backlog"),
-    todo: tasks.filter((t) => t.status === "todo"),
+    review: tasks.filter((t) => t.status === "review"),
     inprogress: tasks.filter((t) => t.status === "inprogress"),
     done: tasks.filter((t) => t.status === "done"),
   };
@@ -14,15 +17,55 @@ function KanbanPage() {
   return (
     <div className="container mx-auto p-4 relative">
       <Toolbar />
+      {/* Drawer open button */}
+      <div className="flex justify-end">
+        <button
+          onClick={() => setIsDrawerOpen(true)}
+          className="px-4 py-2 bg-blue-600 text-white rounded shadow mt-2 xl:mt-4"
+        >
+          Open Drawer
+        </button>
+      </div>
+
       <div className="flex overflow-x-auto gap-4 mt-4 pb-4 xl:overflow-x-visible">
         <KanbanColumn name="Backlog" tasks={groupedTasks.backlog} />
-        <KanbanColumn name="To Do" tasks={groupedTasks.todo} />
         <KanbanColumn name="In Progress" tasks={groupedTasks.inprogress} />
+        <KanbanColumn name="Review" tasks={groupedTasks.review} />
         <KanbanColumn name="Done" tasks={groupedTasks.done} />
       </div>
-      <TaskDrawer />
+
+      <TaskDrawer open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
     </div>
   );
 }
 
 export default KanbanPage;
+
+// import KanbanColumn from "../components/KanbanColumn";
+// import TaskDrawer from "../components/TaskDrawer";
+// import Toolbar from "../components/Toolbar";
+// import { tasks } from "../data/mockData";
+
+// function KanbanPage() {
+//   const groupedTasks = {
+//     backlog: tasks.filter((t) => t.status === "backlog"),
+//     review: tasks.filter((t) => t.status === "review"),
+//     inprogress: tasks.filter((t) => t.status === "inprogress"),
+//     done: tasks.filter((t) => t.status === "done"),
+//   };
+
+//   return (
+//     <div className="container mx-auto p-4 relative">
+//       <Toolbar />
+//       <div className="flex overflow-x-auto gap-4 mt-4 pb-4 xl:overflow-x-visible">
+//         <KanbanColumn name="Backlog" tasks={groupedTasks.backlog} />
+//         <KanbanColumn name="In Progress" tasks={groupedTasks.inprogress} />
+//         <KanbanColumn name="Review" tasks={groupedTasks.review} />
+//         <KanbanColumn name="Done" tasks={groupedTasks.done} />
+//       </div>
+//       <TaskDrawer />
+//     </div>
+//   );
+// }
+
+// export default KanbanPage;
