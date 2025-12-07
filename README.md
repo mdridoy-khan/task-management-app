@@ -11,7 +11,8 @@ This is a React + Tailwind CSS implementation of a task management interface bas
 
 ## Deployment
 
-Deploy in vercel
+Deploy in Netlify Live link in below:
+https://task-management-app0.netlify.app/
 
 ## Pages
 
