@@ -11,7 +11,7 @@ This is a React + Tailwind CSS implementation of a task management interface bas
 
 ## Deployment
 
-Deploy to Vercel/Netlify by connecting your GitHub repo. Build command: npm run build, Output directory: dist.
+Deploy in vercel
 
 ## Pages
 

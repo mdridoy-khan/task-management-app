@@ -1,0 +1,18 @@
+Layout Decisions:
+- Matched wireframe exactly: Toolbar order, column names (Backlog, To Do, In Progress, Done from image), task card positions (avatar bottom-left, icons/counts center, drag right), list rows without headers, drawer fields in sequence.
+- Used flexbox/grid for alignments to replicate low-fi structure.
+- Consistent patterns: Cards (rounded-lg shadow-md p-4), buttons (rounded px-3 py-1 with hover), typography (text-xl bold titles, text-sm details), spacing (gap-4, p-4).
+- Colors: Gray backgrounds, blue actions, priority badges (red/yellow/green).
+- Static data: All mock, no dynamic/API.
+
+Responsiveness Support:
+- Base (mobile <1280px, e.g., 375-414px): Kanban overflow-x-auto for horizontal scroll, drawer fixed bottom-0 w-full h-1/2 rounded-t-lg, list flex-col in cards.
+- xl (>=1280px desktop): Kanban no overflow (side-by-side), drawer fixed right-0 top-0 h-full w-96, list flex-row.
+- Tailwind breakpoints ensure smooth transitions.
+
+Wireframe Mapping:
+- Toolbar: Exact elements/order/spacing.
+- Kanban columns/cards: Headers with name/count/+, cards with title/priority/due/assignee/comments/attachments/drag (visual only, hover/active).
+- Drawer: Right-side desktop/bottom mobile, title/status/priority/assignee/due/description/comments/activity (static mocks).
+- List: Toolbar same, rows with title/status/assignee/priority/due/comments/... (scannable, aligned).
+- All static, production-ready, no extra libs.
